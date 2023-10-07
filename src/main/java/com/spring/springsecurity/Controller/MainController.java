@@ -1,4 +1,4 @@
-package com.spring.springsecurity;
+package com.spring.springsecurity.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +25,9 @@ public class MainController {
     public String admin(){
         return "admin/index";
     }
-
+    @GetMapping("myadmin")
+    public String myadmin(){
+        return "admin/myadmin";
+    }
 
 }

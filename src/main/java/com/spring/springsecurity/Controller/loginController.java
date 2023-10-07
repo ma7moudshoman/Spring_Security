@@ -1,4 +1,4 @@
-package com.spring.springsecurity;
+package com.spring.springsecurity.Controller;
 
 import org.hibernate.annotations.Cache;
 import org.springframework.stereotype.Controller;
