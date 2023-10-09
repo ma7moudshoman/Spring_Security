@@ -33,7 +33,7 @@ public class User    {
             inverseJoinColumns  ={@JoinColumn(name = "role_id")}
     )
     private List<Role> roles;
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY )
     @JoinTable(
             name = "user_authorities",
             joinColumns = {@JoinColumn(name = "user_id")},

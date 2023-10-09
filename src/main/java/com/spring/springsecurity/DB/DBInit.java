@@ -1,4 +1,4 @@
-package com.spring.springsecurity;
+package com.spring.springsecurity.DB;
 
 import com.spring.springsecurity.Model.Authorities;
 import com.spring.springsecurity.Model.Role;

@@ -1,7 +1,10 @@
 package com.spring.springsecurity.SecurityConfig;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,7 +18,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
+    auth
                 .inMemoryAuthentication()
                 .withUser("ahmed")
                 .password(passwordEncoder().encode("ahmed123"))
@@ -30,7 +33,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .withUser("sara")
                 .password(passwordEncoder().encode( "sara123"))
                 .roles("USER");
+
     }
+
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -47,8 +53,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .httpBasic();
     }
+
+
+
     @Bean
-    PasswordEncoder passwordEncoder(){
+    PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
